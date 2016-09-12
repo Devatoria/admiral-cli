@@ -1,4 +1,4 @@
-package cmd
+package version
 
 import (
 	"fmt"
@@ -9,11 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func init() {
-	RootCmd.AddCommand(versionCmd)
-}
-
-var versionCmd = &cobra.Command{
+var Command = &cobra.Command{
 	Use:   "version",
 	Short: "Print the version number of Admiral",
 	Run: func(cmd *cobra.Command, args []string) {
