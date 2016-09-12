@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/Devatoria/admiral-cli/user"
 	"github.com/Devatoria/admiral-cli/version"
 
 	"github.com/spf13/cobra"
@@ -26,6 +27,7 @@ func init() {
 
 	// Subcommands
 	RootCmd.AddCommand(version.Command)
+	RootCmd.AddCommand(user.Command)
 }
 
 func initConfig() {

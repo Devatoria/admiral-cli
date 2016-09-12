@@ -13,7 +13,7 @@ var Command = &cobra.Command{
 	Use:   "version",
 	Short: "Print the version number of Admiral",
 	Run: func(cmd *cobra.Command, args []string) {
-		data, err := client.Request("GET", "/version")
+		data, _, err := client.Request("GET", "/version", nil)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(-1)
