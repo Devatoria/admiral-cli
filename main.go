@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/Devatoria/admiral-cli/namespace"
+	"github.com/Devatoria/admiral-cli/team"
 	"github.com/Devatoria/admiral-cli/user"
 	"github.com/Devatoria/admiral-cli/version"
 
@@ -30,6 +31,7 @@ func init() {
 	RootCmd.AddCommand(version.Command)
 	RootCmd.AddCommand(user.Command)
 	RootCmd.AddCommand(namespace.Command)
+	RootCmd.AddCommand(team.Command)
 }
 
 func initConfig() {
