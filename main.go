@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/Devatoria/admiral-cli/namespace"
 	"github.com/Devatoria/admiral-cli/user"
 	"github.com/Devatoria/admiral-cli/version"
 
@@ -28,6 +29,7 @@ func init() {
 	// Subcommands
 	RootCmd.AddCommand(version.Command)
 	RootCmd.AddCommand(user.Command)
+	RootCmd.AddCommand(namespace.Command)
 }
 
 func initConfig() {

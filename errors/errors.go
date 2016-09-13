@@ -35,3 +35,10 @@ func PrintBadRequestError(data []byte) {
 	fmt.Println(badReqErr.Error)
 	os.Exit(-1)
 }
+
+// Unauthorized prints a message to the user to let him knows that he has
+// insufficient rights to access to needed resource
+func Unauthorized() {
+	fmt.Println("You do not have the required rights to access this resource.")
+	os.Exit(-1)
+}
