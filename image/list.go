@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/Devatoria/admiral-cli/client"
 	"github.com/Devatoria/admiral-cli/table"
@@ -28,11 +29,16 @@ var list = &cobra.Command{
 			panic(err)
 		}
 
-		t := table.NewTable([]string{"Name", "Created at"})
+		t := table.NewTable([]string{"Name", "Created at", "Tags"})
 		for _, image := range images {
+			var tagsList []string
+			for _, tag := range image.Tags {
+				tagsList = append(tagsList, tag.Name)
+			}
 			t.Append([]string{
 				image.Name,
 				image.CreatedAt.String(),
+				strings.Join(tagsList, ", "),
 			})
 		}
 
