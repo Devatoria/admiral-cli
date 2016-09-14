@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Devatoria/admiral-cli/namespace"
-	"github.com/Devatoria/admiral-cli/team"
-	"github.com/Devatoria/admiral-cli/user"
+	"github.com/Devatoria/admiral-cli/image"
 	"github.com/Devatoria/admiral-cli/version"
 
 	"github.com/spf13/cobra"
@@ -28,10 +26,8 @@ func init() {
 	viper.BindPFlag("password", RootCmd.PersistentFlags().Lookup("password"))
 
 	// Subcommands
+	RootCmd.AddCommand(image.Command)
 	RootCmd.AddCommand(version.Command)
-	RootCmd.AddCommand(user.Command)
-	RootCmd.AddCommand(namespace.Command)
-	RootCmd.AddCommand(team.Command)
 }
 
 func initConfig() {

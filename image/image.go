@@ -1,4 +1,4 @@
-package namespace
+package image
 
 import (
 	"github.com/spf13/cobra"
@@ -9,6 +9,6 @@ func init() {
 }
 
 var Command = &cobra.Command{
-	Use:   "namespace",
-	Short: "Namespace command",
+	Use:   "image",
+	Short: "Image command",
 }
