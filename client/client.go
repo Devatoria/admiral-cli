@@ -24,6 +24,9 @@ func Request(method, url string, bodyData interface{}) ([]byte, int, error) {
 	}
 
 	req.SetBasicAuth(viper.GetString("username"), viper.GetString("password"))
+	if bodyData != nil {
+		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	}
 
 	client := http.Client{}
 	resp, err := client.Do(req)

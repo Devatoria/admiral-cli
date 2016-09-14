@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/Devatoria/admiral-cli/image"
+	"github.com/Devatoria/admiral-cli/user"
 	"github.com/Devatoria/admiral-cli/version"
 
 	"github.com/spf13/cobra"
@@ -26,6 +27,7 @@ func init() {
 	viper.BindPFlag("password", RootCmd.PersistentFlags().Lookup("password"))
 
 	// Subcommands
+	RootCmd.AddCommand(user.Command)
 	RootCmd.AddCommand(image.Command)
 	RootCmd.AddCommand(version.Command)
 }
