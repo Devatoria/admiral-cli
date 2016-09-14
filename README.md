@@ -12,7 +12,7 @@ Usage:
   admiral-cli [command]
 
 Available Commands:
-  user        User command
+  image       Image command
   version     Print the version number of Admiral
 
 Flags:
