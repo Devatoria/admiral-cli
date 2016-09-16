@@ -7,6 +7,8 @@ import (
 func init() {
 	Command.AddCommand(delete)
 	Command.AddCommand(list)
+	Command.AddCommand(setPublic)
+	Command.AddCommand(setPrivate)
 }
 
 var Command = &cobra.Command{
