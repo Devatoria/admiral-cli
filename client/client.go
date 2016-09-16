@@ -7,6 +7,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
+	"github.com/Devatoria/admiral-cli/errors"
+
 	"github.com/spf13/viper"
 )
 
@@ -39,6 +41,10 @@ func Request(method, url string, bodyData interface{}) ([]byte, int, error) {
 		return nil, 0, err
 	}
 	defer resp.Body.Close()
+
+	if resp.StatusCode == http.StatusUnauthorized {
+		errors.Unauthorized()
+	}
 
 	return data, resp.StatusCode, nil
 }
