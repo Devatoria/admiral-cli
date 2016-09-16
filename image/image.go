@@ -5,6 +5,7 @@ import (
 )
 
 func init() {
+	Command.AddCommand(delete)
 	Command.AddCommand(list)
 }
 

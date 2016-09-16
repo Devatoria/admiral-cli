@@ -39,6 +39,12 @@ func PrintBadRequestError(data []byte) {
 // Unauthorized prints a message to the user to let him knows that he has
 // insufficient rights to access to needed resource
 func Unauthorized() {
-	fmt.Println("You do not have the required rights to access this resource.")
+	fmt.Println("You do not have the required rights to access this resource")
+	os.Exit(-1)
+}
+
+// NotFound prints a message indicates that the requested resource could not be found
+func NotFound() {
+	fmt.Println("The resource you requested could not be found")
 	os.Exit(-1)
 }
