@@ -29,8 +29,15 @@ var list = &cobra.Command{
 			panic(err)
 		}
 
-		t := table.NewTable([]string{"Name", "Created at", "Tags"})
+		t := table.NewTable([]string{"Name", "Created at", "Public", "Tags"})
 		for _, image := range images {
+			var public string
+			if image.IsPublic {
+				public = "Yes"
+			} else {
+				public = "No"
+			}
+
 			var tagsList []string
 			for _, tag := range image.Tags {
 				tagsList = append(tagsList, tag.Name)
@@ -38,6 +45,7 @@ var list = &cobra.Command{
 			t.Append([]string{
 				image.Name,
 				image.CreatedAt.String(),
+				public,
 				strings.Join(tagsList, ", "),
 			})
 		}
